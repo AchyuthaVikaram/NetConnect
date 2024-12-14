@@ -2,7 +2,6 @@ import { BASE_URL, createServer } from "@/config";
 import DashboardLayout from "@/layouts/dashboardLayout";
 import UserLayout from "@/layouts/userLayout";
 import styles from "./index.module.css";
-import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -14,7 +13,6 @@ import {
 } from "@/config/redux/action/authAction";
 
 function ViewProfile({ profile }) {
-	const searchParams = useSearchParams();
 	const router = useRouter();
 	const postState = useSelector((store) => store.posts);
 	const authState = useSelector((store) => store.auth);
