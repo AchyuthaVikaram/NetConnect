@@ -17,6 +17,7 @@ const initialState = {
 	loggedIn: false,
 	comments: [],
 	postid: "",
+    postLikes:""
 };
 
 const postSlice = createSlice({
@@ -70,7 +71,7 @@ const postSlice = createSlice({
 			})
 			.addCase(incrementLike.fulfilled, (state, action) => {
 				state.isError = false;
-				state.message = action.payload;
+				state.postLikes = action.payload;
 			})
 			.addCase(getAllComments.fulfilled, (state, action) => {
 				state.comments = action.payload.comments;

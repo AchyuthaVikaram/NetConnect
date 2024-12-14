@@ -102,7 +102,7 @@ export const deleteComment = async (req, res) => {
 		if (comment.userId.toString() !== user._id.toString()) {
 			return res.status(400).json({ message: "You can't delete this comment" });
 		}
-		await comment.remove();
+		await Comment.findByIdAndDelete(commentId);
 		return res.status(200).json({ message: "Comment deleted" });
 	} catch (e) {
 		console.log(e);
@@ -120,7 +120,7 @@ export const likePost = async (req, res) => {
 		}
 		post.likes = post.likes + 1;
 		await post.save();
-		return res.status(200).json({ message: "Post liked" });
+	return res.status(200).json({ message: `${post.likes}` });
 	} catch (e) {
 		console.log(e);
 		res.status(400).json({ message: e.message });

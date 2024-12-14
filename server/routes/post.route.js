@@ -13,7 +13,7 @@ router.route("/posts").get(getALlPosts);
 router.route("/delete_post").post(deletePost);
 router.route("/comment").post(isAuthenticated,postComment);
 router.route("/get/comments").get(showAllCommentsForPost);
-router.route("/delete_comment").delete(isAuthenticated,deleteComment);
+router.route("/delete_comment").post(isAuthenticated,deleteComment);
 router.route("/like").post(isAuthenticated,likePost);
 
 

@@ -162,8 +162,9 @@ function Dashboard() {
 									</div>
 									<div className={style.postOptions}>
 										<div
-											onClick={() => {
-												dispatch(incrementLike(post));
+											onClick={async() => {
+												await dispatch(incrementLike(post));
+												dispatch(getAllPosts());
 												dispatch(getAllPosts());
 											}}
 											className={style.postLike}

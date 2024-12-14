@@ -70,7 +70,12 @@ function ViewProfile({ profile }) {
 
 	useEffect(() => {
 		getUserPost();
+		
 	}, []);
+	useEffect(()=>{
+		setIsConnectionNull(true);
+		setIsCurrentUserIsConnection(null);
+	},[authState.user.userId])
 	return (
 		<UserLayout>
 			<DashboardLayout>

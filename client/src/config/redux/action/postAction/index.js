@@ -75,7 +75,7 @@ export const incrementLike = createAsyncThunk(
 					},
 				}
 			);
-			return thunkApi.fulfillWithValue(res.data);
+			return thunkApi.fulfillWithValue(res.data.message);
 		} catch (e) {
 			return thunkApi.rejectWithValue(e.response.data.message);
 		}
@@ -129,7 +129,7 @@ export const deleteComment = createAsyncThunk(
 	"post/deletecomment",
 	async (commentId, thunkApi) => {
 		try {
-			const res = await createServer.delete(
+			const res = await createServer.post(
 				"/delete_comment",
 				{
 					commentId,
