@@ -124,3 +124,25 @@ export const postComment = createAsyncThunk(
 		}
 	}
 );
+
+export const deleteComment = createAsyncThunk(
+	"post/deletecomment",
+	async (commentId, thunkApi) => {
+		try {
+			const res = await createServer.delete(
+				"/delete_comment",
+				{
+					commentId,
+				},
+				{
+					params: {
+						token: localStorage.getItem("token"),
+					},
+				}
+			);
+			return thunkApi.fulfillWithValue(res.data);
+		} catch (e) {
+			return thunkApi.rejectWithValue(e.response.data.message);
+		}
+	}
+);

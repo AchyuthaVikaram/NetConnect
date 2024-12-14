@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
 	createPost,
+	deleteComment,
 	deletePost,
 	getAllComments,
 	getAllPosts,
 	incrementLike,
 	postComment,
 } from "../../action/postAction";
-import { act } from "react";
 const initialState = {
 	posts: [],
 	isError: false,
@@ -84,7 +84,16 @@ const postSlice = createSlice({
 			.addCase(postComment.fulfilled, (state, action) => {
 				state.isError = false;
 				state.message = action.payload;
-			});
+			})
+			.addCase(deleteComment.rejected, (state, action) => {
+				state.isError = true;
+				state.message = action.payload;
+			})
+			.addCase(deleteComment.fulfilled, (state, action) => {
+				state.isError = false;
+				state.message = action.payload;
+			})
+
 	},
 });
 export const { resetPostId } = postSlice.actions;

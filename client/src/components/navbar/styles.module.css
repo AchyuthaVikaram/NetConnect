@@ -13,3 +13,9 @@
 .rightContainer{
  cursor: pointer;
 }
+
+@media only screen and (max-width:600px){
+  .userName{
+    display: none;
+  }
+}

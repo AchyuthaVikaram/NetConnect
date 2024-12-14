@@ -41,4 +41,8 @@
     gap:2rem;
     padding: 3rem;;
    }    
+   .heading{
+    padding-top: 2rem;
+    font-size: 2rem;
+   }
 }

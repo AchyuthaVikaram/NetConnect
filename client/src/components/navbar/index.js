@@ -14,7 +14,7 @@ function Navbar() {
 			<div className={style.rightContainer}>
 				{authState.profileFetched && (
 					<div style={{ display: "flex", gap: "10px" }}>
-						<p>hey,{authState.user.userId.name}</p>
+						<p className={style.userName}>hey,{authState.user.userId.name}</p>
 						<p onClick={()=>{
 							router.push("/profile")
 						}} style={{fontWeight:"bold",cursor:"pointer"}}>Profile</p>

@@ -24,30 +24,37 @@ function Discover() {
 					<h1 style={{ marginBlock: "1rem" }}>Discover</h1>
 					<div className={style.userContainer}>
 						{authState.all_profiles_fetched &&
-							authState.all_users.map((user, index) => (
-								<div
-									onClick={() => {
-										router.push(`/view_profile/${user.userId.username}`);
-									}}
-									className={style.userCard}
-								>
-									<img
-										style={{ borderRadius: "50%" }}
-										src={
-											user.userId.profilePicture === "default.jpg"
-												? `${BASE_URL}/${user.userId.profilePicture}`
-												: user.userId.profilePicture
-										}
-										alt="usreImg"
-									/>
-									<div className={style.useDetails}>
-										<h2 style={{ marginTop: "0.5rem" }}>{user.userId.name}</h2>
-										<p style={{ fontStyle: "italic" }}>
-											@{user.userId.username}
-										</p>
+							authState.all_users
+								.filter(
+									(user) => user.userId.token !== localStorage.getItem("token") // Exclude current user
+								)
+								.map((user, index) => (
+									<div
+										key={index}
+										onClick={() => {
+											router.push(`/view_profile/${user.userId.username}`);
+										}}
+										className={style.userCard}
+									>
+										<img
+											style={{ borderRadius: "50%" }}
+											src={
+												user.userId.profilePicture === "default.jpg"
+													? `${BASE_URL}/${user.userId.profilePicture}`
+													: user.userId.profilePicture
+											}
+											alt="usreImg"
+										/>
+										<div className={style.useDetails}>
+											<h2 style={{ marginTop: "0.5rem" }}>
+												{user.userId.name}
+											</h2>
+											<p style={{ fontStyle: "italic" }}>
+												@{user.userId.username}
+											</p>
+										</div>
 									</div>
-								</div>
-							))}
+								))}
 					</div>
 				</div>
 			</DashboardLayout>

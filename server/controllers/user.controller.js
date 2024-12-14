@@ -16,7 +16,7 @@ const convertToPdf = async (userData) => {
 		align: "center",
 		width: 100, // Set explicit width in pixels
 	});
-	doc.moveDown(25);
+	doc.moveDown(5);
 	doc.fontSize(14).text(`Name: ${userData.userId.name}`);
 	doc.fontSize(14).text(`UserName: ${userData.userId.username}`);
 	doc.fontSize(14).text(`Email: ${userData.userId.email}`);

@@ -1,13 +1,13 @@
 import { getUserData } from "@/config/redux/action/authAction";
 import {
 	createPost,
+	deleteComment,
 	deletePost,
 	getAllComments,
 	getAllPosts,
 	incrementLike,
 	postComment,
 } from "@/config/redux/action/postAction";
-import { setIsTokenThere } from "@/config/redux/reducer/authReducer";
 import DashboardLayout from "@/layouts/dashboardLayout";
 import UserLayout from "@/layouts/userLayout";
 import { useRouter } from "next/router";
@@ -49,10 +49,13 @@ function Dashboard() {
 		<UserLayout>
 			<DashboardLayout>
 				<div className="scrollComponent">
-					<div className={style.createPostContainer}>
+					<div
+						style={{ marginTop: "1rem", marginBottom: "2rem" }}
+						className={style.createPostContainer}
+					>
 						<img
-						    onClick={()=>{
-								router.push(`/view_profile/${authState.user.userId?.username}`)
+							onClick={() => {
+								router.push(`/view_profile/${authState.user.userId?.username}`);
 							}}
 							className={style.profilePhoto}
 							src={
@@ -117,9 +120,12 @@ function Dashboard() {
 												}
 												alt="img"
 											/>
-											<div onClick={()=>{
-												router.push(`/view_profile/${post.userId.username}`)
-											}} className={style.postDeatils}>
+											<div
+												onClick={() => {
+													router.push(`/view_profile/${post.userId.username}`);
+												}}
+												className={style.postDeatils}
+											>
 												<p style={{ fontWeight: "bold" }}>{post.userId.name}</p>
 												<p style={{ fontStyle: "italic" }}>
 													@{post.userId.username}
@@ -250,7 +256,6 @@ function Dashboard() {
 										<div className={style.singleComment} key={index}>
 											<div className={style.postProfile}>
 												<div className={style.postHeader}>
-													
 													<img
 														className={style.userProfileComment}
 														src={
@@ -271,7 +276,11 @@ function Dashboard() {
 												</div>
 												{comment.userId?._id == authState.user?.userId?._id && (
 													<div
-														// onClick={() => handleDeletePost(post._id)}
+														onClick={() => {
+															dispatch(deleteComment(comment._id));
+															dispatch(getAllComments(postState.postid));
+															dispatch(getAllComments(postState.postid));
+														}}
 														className={style.deleteCommentIcon}
 													>
 														<svg
