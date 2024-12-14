@@ -1,0 +1,234 @@
+.scrollComponent {
+	/* display: flex;
+    justify-content: center;
+    padding: 20px; */
+}
+.createPostContainer {
+	display: flex;
+	align-items: center;
+	height: 10svh;
+	width: 100%;
+	padding-inline: 0.8rem;
+	gap: 1rem;
+	justify-content: center;
+	position: relative;
+}
+.profilePhoto {
+	border-radius: 100%;
+	height: 70%;
+	width: fit-content;
+}
+.createPostContainer > textarea {
+	width: 100%;
+}
+.textarea {
+	width: 70%;
+	height: 70%;
+	border: 1px solid gray;
+	border-radius: 10px;
+	outline: none;
+	border-radius: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-inline: 1.5rem;
+	padding-block: 0.8rem;
+}
+.fab {
+	background-color: rgb(59, 169, 241);
+	border-radius: 100%;
+	font-weight: 600;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-right: 3rem;
+}
+
+.fab > svg {
+	width: fit-content;
+	height: 35px;
+	color: white;
+}
+.uploadButton {
+	position: absolute;
+	right: 40px;
+	bottom: -30px;
+	background-color: rgb(59, 169, 241);
+	color: white;
+	padding-block: 0.5rem;
+	padding-inline: 1rem;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.postContainer {
+	width: 90%;
+	padding: 1rem;
+	margin: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.postCard {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgb(225, 223, 223);
+	border-radius: 10px;
+}
+
+.postProfile {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+}
+.postHeader {
+	display: flex;
+}
+.userProfile {
+	height: 50px;
+	border-radius: 100%;
+}
+.postBio {
+	margin: 0.25rem;
+	padding: 10px;
+}
+.postDeatils {
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+
+	padding: 10px;
+}
+.postPics {
+	padding-top: 1rem;
+}
+.postPics > img {
+	width: 100%;
+}
+.deleteIcon > svg {
+	height: 20px;
+	color: red;
+}
+
+.postOptions {
+	border-top: 1px solid rgb(216, 216, 216);
+	display: flex;
+	width: 100%;
+	padding: 1rem 2rem;
+	gap: 2rem;
+}
+.postLike {
+	display: flex;
+	gap: 0.25rem;
+	align-items: center;
+}
+
+.postLike > svg {
+	height: 1.7rem;
+}
+.postComment {
+	display: flex;
+	gap: 0.25rem;
+	align-items: center;
+}
+
+.postComment > svg {
+	height: 1.7rem;
+}
+.postShare {
+	display: flex;
+	gap: 0.25rem;
+	align-items: center;
+}
+
+.postShare > svg {
+	height: 1.5rem;
+}
+
+.commentContainer {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0, 0.3);
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+.commentBox {
+	height: 80vh;
+	width: 40vw;
+	background-color: white;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	position: relative;
+}
+
+.postCommentBox {
+	position: absolute;
+	bottom: 1.2rem;
+	left: 1.2rem;
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.2rem;
+}
+.postCommentBox > input {
+	flex: 0.9;
+	padding-inline: 1.5rem;
+	padding-block: 1.2rem;
+	border: 1px solid rgb(211, 211, 211);
+	outline: none;
+	border-radius: 20px;
+}
+.commentButton {
+	flex: 0.1;
+	padding: 1.1rem;
+	width: fit-content;
+	background-color: rgb(87, 201, 235);
+	color: white;
+	font-weight: bold;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.singleComment {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.commentBio {
+	margin-top: 0;
+	padding: 0.5rem 3rem;
+	font-size: medium;
+}
+.userProfileComment {
+	height: 35px;
+	border-radius: 100%;
+}
+.commentDeatils {
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	font-size: 0.75rem;
+}
+.deleteCommentIcon > svg {
+	height: 14px;
+	color: red;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+	.commentBox{
+		width: 95svw;
+	}	
+ }

@@ -1,0 +1,15 @@
+.container{
+ padding: 10px;
+ height: 60px;
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+.leftContainer{
+  cursor: pointer;
+  margin-left: 20px;
+}
+.rightContainer{
+ cursor: pointer;
+}

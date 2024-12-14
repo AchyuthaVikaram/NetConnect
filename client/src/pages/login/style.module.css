@@ -1,0 +1,96 @@
+.container{
+    height: 90vh;
+    background:snow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_container{
+    height: 80vh;
+    width: 80vw;
+    overflow: hidden;
+    border-radius: 10px;
+    background: white;
+    display: flex;
+    
+    border: none;
+    box-shadow: 10px 10px 15px rgb(173,173,173);
+}
+.card_leftContainer{
+    flex: 0.6;
+    padding: 2rem;
+    text-align: center;
+}
+.card_leftHeading{
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+.input{
+    margin: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+/* .input_label{
+ flex:0.2;
+} */
+.input_control{
+  flex: 0.7;
+  width: 70%;
+  padding-inline: 20px;
+  padding-block: 10px;
+  outline: none;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.form{
+    margin: 20px;
+}
+.submit_button{
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(54, 166, 231);
+  border: none;
+  cursor: pointer;
+  margin: 20px;
+}
+.card_rightContainer{
+    flex: 0.4;
+    background-color: rgb(81, 177, 233);
+}
+.toggleButton{
+    color: white;
+    margin-top:12rem;
+    font-size:larger;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px){
+    .card_container{
+        flex-direction: column;
+    }
+    .card_rightContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .toggleButton{
+      margin-top: 10px;;
+    }
+    .card_leftContainer{
+        padding: 1rem;
+    }
+    .form{
+        margin: 10px;
+    }
+    .input{
+        margin: 10px;
+    }
+}
