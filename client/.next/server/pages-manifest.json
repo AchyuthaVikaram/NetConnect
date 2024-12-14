@@ -1,8 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/dashboard": "pages/dashboard.js",
-  "/view_profile/[username]": "pages/view_profile/[username].js"
-}
+{"/_error":"pages/_error.js","/dashboard":"pages/dashboard.html","/discover":"pages/discover.html","/":"pages/index.html","/login":"pages/login.html","/_app":"pages/_app.js","/profile":"pages/profile.html","/_document":"pages/_document.js","/my_connections":"pages/my_connections.html","/api/hello":"pages/api/hello.js","/view_profile/[username]":"pages/view_profile/[username].js","/404":"pages/404.html"}
