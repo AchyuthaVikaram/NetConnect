@@ -102,6 +102,9 @@
 	.home_leftContainer {
 		display: none;
 	}
+	.home_SideContainer{
+		display: none;
+	}
 	.mobileNavbar {
 		display: flex;
 	}
